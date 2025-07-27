@@ -94,7 +94,7 @@ def main():
     
     args = parser.parse_args()
     print(args)
-    configs = args.run or ['sft', 'lora', 'kd', 'neo']
+    configs = args.run
     
     # check for kd (kd/neo need teacher_model_name_or_path and kd_ratio>0)
     if not hasattr(args, 'teacher_model_name_or_path') or not args.teacher_model_name_or_path:

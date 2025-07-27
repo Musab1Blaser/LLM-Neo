@@ -92,7 +92,7 @@ class CustomSeq2SeqTrainer(Seq2SeqTrainer):
             self.teacher_model = None
 
     @override
-    def compute_loss(self, model, inputs, return_outputs=False):
+    def compute_loss(self, model, inputs, return_outputs=False, num_items_in_batch=None):
         labels = inputs.get("labels")
         # Forward pass for the student model
         outputs = model(**inputs)

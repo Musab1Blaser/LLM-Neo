@@ -34,7 +34,7 @@ def generate_config(args, config_type, train_template, merge_template):
         "stage": "sft",
         "ft_type": "lora" if is_lora else "full",
         "lora_config": lora_config,
-        "dataset": "BAAI-Infinity-Instruct-0625",
+        "dataset": "alpaca_en_demo",
         "template": args.template,
         "cutoff_len": args.cutoff_len,
         "max_samples": args.max_samples,

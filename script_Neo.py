@@ -90,11 +90,11 @@ def main():
     parser.add_argument('--plot_loss', action='store_true', help='Enable loss plotting')
     parser.add_argument('--overwrite_cache', action='store_true', help='Overwrite processed data')
     parser.add_argument('--output_root', default='saves', help='Root output directory')
-    parser.add_argument('--run', nargs='*', choices=['neo'], help='Configs to generate (default: all)')
+    parser.add_argument('--run', default= ['neo'], nargs='*', choices=['sft', 'lora', 'kd', 'neo'], help='Configs to generate (default: all)')
     
     args = parser.parse_args()
     print(args)
-    configs = args.run
+    configs = args.run or ['sft', 'lora', 'kd', 'neo']
     
     # check for kd (kd/neo need teacher_model_name_or_path and kd_ratio>0)
     if not hasattr(args, 'teacher_model_name_or_path') or not args.teacher_model_name_or_path:

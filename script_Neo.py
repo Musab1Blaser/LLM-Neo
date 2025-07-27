@@ -72,7 +72,7 @@ def main():
 
     parser = argparse.ArgumentParser(description='Generate training configs')
     # 添加所有必要的参数
-    parser.add_argument('--model_family', default='llama3.2', help='Base model family name')
+    parser.add_argument('--model_family', default='llama3', help='Base model family name')
     parser.add_argument('--model_size', default='3b', help='Model size variant')
     parser.add_argument('--base_model', default='AlphaAnas70/pruned_llama-3.2-3b-Instruct-20_per', help='HF model or local path')
     parser.add_argument('--teacher_model_name_or_path', default='meta-llama/Llama-3.2-3B-Instruct', help='Teacher model path can be empty or commented out')
@@ -81,7 +81,7 @@ def main():
     parser.add_argument('--batch_size', type=int, default=1, help='Batch size per device')
     parser.add_argument('--grad_accum', type=int, default=8, help='Gradient accumulation steps')
     parser.add_argument('--cutoff_len', type=int, default=2048, help='Context length')
-    parser.add_argument('--template', default='llama3.2', help='Prompt template')
+    parser.add_argument('--template', default='llama3', help='Prompt template')
     parser.add_argument('--max_samples', type=int, default=10000, help='Max samples per dataset')
     parser.add_argument('--lora_rank', type=int, default=64, help='LoRA rank')
     parser.add_argument('--kd_ratio', type=float, default=0.5, help='Knowledge distillation ratio')
